@@ -1,0 +1,14 @@
+{
+  "name": "思想共和公社 · 一键出卡",
+  "short_name": "一键出卡",
+  "lang": "zh-CN",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#101522",
+  "background_color": "#101522",
+  "icons": [
+    { "src": "./assets/commune-emblem.png", "sizes": "444x444", "type": "image/png", "purpose": "any" }
+  ]
+}
