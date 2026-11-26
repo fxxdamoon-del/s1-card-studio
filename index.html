@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>思想共和公社 · 一键出卡</title>
+<meta name="theme-color" content="#101522">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="./assets/commune-emblem.png">
+<link rel="manifest" href="./studio.webmanifest">
+<link rel="stylesheet" href="./viewer.css"><link rel="stylesheet" href="./studio.css">
+<header><div><strong>思想共和公社</strong><small>THE REPUBLIC OF THOUGHT</small></div><span>S1 卡牌制作</span></header>
+<main class="studio">
+  <section class="editor" aria-label="卡牌设置">
+    <h1>一键出卡</h1>
+    <fieldset><legend>选母版</legend><div id="templates" class="templates"></div></fieldset>
+    <label class="upload">上传主图<input id="upload" type="file" accept="image/png,image/jpeg,image/webp"></label>
+  <label class="upload side-upload">SR 侧记图<input id="sr-upload" type="file" accept="image/png,image/jpeg,image/webp"></label>
+    <div class="fields"><label>顶部卡名 <input id="name" type="text" maxlength="28" placeholder="选填，留空保留母版"></label>
+    <div class="field-pair"><label>卡名对齐<select id="name-align"><option value="center">居中</option><option value="left">靠左</option><option value="right">靠右</option></select></label><label>卡名左右微调<input id="name-offset" type="range" min="-115" max="115" value="0"></label></div>
+    <div class="field-pair"><label>星级 <input id="stars" type="number" min="0" max="10" value="2"></label><label>属性 <input id="attribute" type="text" maxlength="2" placeholder="例如 音"></label></div>
+    <div class="field-pair"><label>星星大小<input id="star-size" type="range" min="27" max="43" value="36"></label><label>属性大小<input id="attribute-size" type="range" min="38" max="88" value="63"></label></div>
+    <label>下方文字 <textarea id="body-text" maxlength="120" rows="3" placeholder="输入卡牌文案"></textarea></label>
+    <div class="field-pair">
+      <label>下方文字字体<select id="body-font"><option value="sans">黑体</option><option value="serif">宋体</option><option value="hand">手写</option></select></label>
+      <div>
+        <label for="body-size-number">下方文字大小</label>
+        <input id="body-size-number" type="number" min="20" max="140" step="1" value="58">
+        <input id="body-size" type="range" min="20" max="140" step="1" value="58" aria-label="拖动调整下方文字大小">
+      </div>
+    </div>
+    <label id="signature-field" hidden>签字内容 <input id="signature" type="text" maxlength="32"></label>
+    <div class="fields" id="one-writing" hidden>
+      <div class="field-pair">
+        <label>签名字号<input id="one-sign-size" type="number" min="32" max="120" value="91"></label>
+        <label>手写编号字号<input id="one-number-size" type="number" min="32" max="110" value="82"></label>
+      </div>
+      <div class="field-pair">
+        <label>签名左右位置<input id="one-sign-x" type="range" min="-700" max="700" value="0"></label>
+        <label>编号左右位置<input id="one-number-x" type="range" min="-700" max="700" value="0"></label>
+      </div>
+      <div class="field-pair">
+        <label>签名上下位置<input id="one-sign-y" type="range" min="-38" max="38" value="0"></label>
+        <label>编号上下位置<input id="one-number-y" type="range" min="-38" max="38" value="0"></label>
+      </div>
+    </div>
+    <div class="field-pair"><label>ATK <input id="attack" type="text" maxlength="10" placeholder="例如 2500"></label><label>DEF <input id="defense" type="text" maxlength="10" placeholder="例如 1800"></label></div>
+    <label>标题下方署名 <input id="footer" type="text" maxlength="40" placeholder="例如 THE REPUBLIC OF THOUGHT"></label>
+    <div class="field-pair">
+      <label>署名字号<input id="byline-size" type="number" min="24" max="68" value="42"></label>
+      <label>署名对齐<select id="byline-align"><option value="left">靠左</option><option value="center">居中</option><option value="right">靠右</option></select></label>
+    </div>
+    <div class="field-pair">
+      <label>署名左右微调<input id="byline-x" type="range" min="-100" max="100" value="0"></label>
+      <label>署名上下微调<input id="byline-y" type="range" min="-24" max="24" value="0"></label>
+    </div>
+    <div class="field-pair"><label id="serial-field" hidden>限量编号 <output id="edition-limit"></output><input id="serial" type="text" inputmode="numeric" maxlength="14" placeholder="输入本张序号"></label><label>卡背字样 <input id="back-text" type="text" maxlength="32"></label></div>
+    <label><input id="back-emblem" type="checkbox"> 卡背添加公社徽记</label>
+    <details open class="vocal-pools">
+      <summary>卡种与干声对照</summary>
+      <p>C/R 共用 WH，UR/SEC 共用 FT。QC 的 Take 号按上传顺序编号。更新音频后，开始新模拟即可套用。</p>
+      <div id="vocal-table"></div>
+      <label><span id="vocal-label">当前卡种试听池</span> <output id="vocal-count"></output><input id="vocal-audio" type="file" multiple accept="audio/*,.mp3,.wav,.m4a,.ogg,.opus,.aac" hidden></label>
+    </details>
+    <div class="field-pair"><button type="button" id="vocal-reroll" hidden>重抽当前试听</button><button type="button" id="vocal-clear" hidden>清空该档干声池</button></div>
+    <details>
+      <summary>卡背二维码和刮刮区</summary>
+      <div class="fields">
+        <label><input id="back-qr" type="checkbox"> 添加验真二维码</label>
+        <label id="back-qr-field" hidden>验真链接 <input id="back-qr-url" type="text" inputmode="url" maxlength="240" placeholder="留空显示占位，或粘贴单卡链接"></label>
+        <label><input id="back-pin" type="checkbox"> 添加刮刮 PIN 区</label>
+      </div>
+    </details>
+    <label id="serial-size-field" hidden>编号大小 <output id="serial-size-value">100%</output><input id="serial-size" type="range" min="65" max="155" value="100"></label>
+    <label><input id="cutout" type="checkbox" checked> 自动分离人像，保留卡内视差</label>
+    <label>人物背景<select id="scene-mode"><option value="original">保留原图场景</option><option value="template">使用母版底纹</option></select></label>
+    <label>取景高度<input id="crop" type="range" min="0" max="100" value="0"></label>
+    <div class="field-pair">
+      <label>取景左右微调<input id="crop-x" type="range" min="-100" max="100" value="0"></label>
+      <label>取景上下微调<input id="crop-y" type="range" min="-100" max="100" value="0"></label>
+    </div>
+    <label>取景大小 <output id="zoom-value">100%</output><input id="zoom" type="range" min="65" max="175" value="100"></label>
+    <div id="relic-fields" class="fields" hidden>
+      <label>RLC 版本<select id="relic-tier"><option value="20">普通 · /20</option><option value="10">标志 Patch · /10</option><option value="5">双信物 · /5</option></select></label>
+      <div class="field-pair"><label>RLC 主图左右<input id="relic-x" type="range" min="-100" max="100" value="0"></label><label>RLC 主图上下<input id="relic-y" type="range" min="-100" max="100" value="0"></label></div>
+      <label>RLC 信物照片 <input id="patch" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      <div class="field-pair"><label>信物左右<input id="patch-x" type="range" min="-100" max="100" value="0"></label><label>信物上下<input id="patch-y" type="range" min="-100" max="100" value="0"></label></div>
+      <div id="patch2-field" class="fields" hidden>
+        <label>第二张信物照片 <input id="patch2" type="file" accept="image/png,image/jpeg,image/webp"></label>
+        <div class="field-pair"><label>第二件信物左右<input id="patch2-x" type="range" min="-100" max="100" value="0"></label><label>第二件信物上下<input id="patch2-y" type="range" min="-100" max="100" value="0"></label></div>
+      </div>
+      <label><input id="relic-sign" type="checkbox" checked> 物料槽下方带签字条</label>
+    </div></div>
+    <details open id="effects"><summary>箔面、表面和特殊效果</summary>
+      <div class="fields">
+        <div class="field-pair"><label>箔面<select id="foil-type"></select></label><label>表面<select id="surface-type"></select></label></div>
+        <div class="field-pair">
+          <label>箔面强度 <output id="foil-strength-value">100%</output><input id="foil-strength" type="range" min="0" max="200" value="100"></label>
+          <label>表面强度 <output id="surface-strength-value">100%</output><input id="surface-strength" type="range" min="0" max="200" value="100"></label>
+        </div>
+        <label id="foil-area-field" hidden>烫印范围<select id="foil-area"><option value="rim">局部边框</option><option value="full">整面</option></select></label>
+        <div id="special-effects" class="special-effects"></div>
+        <label id="special-strength-field" hidden>特殊效果强度 <output id="special-strength-value">100%</output><input id="special-strength" type="range" min="0" max="200" value="100"></label>
+        <label id="shape-field" hidden>模切形状<select id="shape"><option value="octagon">切角</option><option value="shield">盾形</option><option value="arch">拱顶</option></select></label>
+        <label id="alt-field" hidden>3D 第二张图<input id="alt" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      </div>
+    </details>
+    <p id="status" role="status">正在载入母版…</p>
+    <div class="exports"><button type="button" id="download" disabled>下载交互卡</button><button type="button" id="png" disabled>正面 PNG</button><button type="button" id="back-png" disabled>卡背 PNG</button></div>
+  </section>
+  <section class="preview" id="preview-stage" aria-label="卡牌预览">
+    <div class="preview-content">
+      <div class="preview-tools">
+        <button type="button" id="preview-lamp" aria-label="预览灯" aria-pressed="false">开灯</button>
+        <label>预览背景
+          <select id="preview-background">
+            <option value="navy">深蓝</option>
+            <option value="white">白色</option>
+            <option value="black">黑色</option>
+          </select>
+        </label>
+        <button type="button" id="try-pack" disabled>试拆卡包</button>
+        <button type="button" id="mobile-preview-toggle" aria-expanded="true" aria-controls="preview">收起预览</button>
+      </div>
+      <div id="preview"></div>
+    </div>
+  </section>
+</main>
+<dialog id="pack-trial" class="pack-trial" aria-labelledby="pack-trial-title">
+  <div class="pack-header">
+    <h2 id="pack-trial-title">试拆卡包</h2>
+    <div class="pack-tools">
+      <button type="button" id="pack-sound" aria-pressed="false">开启声音</button>
+      <button type="button" id="pack-reset">重新封包</button>
+      <form method="dialog"><button type="submit">关闭</button></form>
+    </div>
+  </div>
+  <div class="pack-layout">
+    <div class="pack-display">
+      <div id="pack-wrapper" class="pack-wrapper">
+        <canvas id="pack-mesh" aria-hidden="true"></canvas>
+        <canvas id="pack-fallback" aria-hidden="true" hidden></canvas>
+        <canvas id="pack-light" class="pack-effect-layer" aria-hidden="true"></canvas>
+        <canvas id="pack-tear-trace" class="pack-effect-layer" aria-hidden="true"></canvas>
+        <button type="button" id="pack-tear" class="pack-tear" aria-label="沿封口向右撕开卡包"><span></span></button>
+      </div>
+      <div id="pack-card" class="pack-card" hidden></div>
+      <canvas id="pack-burst" class="pack-effect-layer" aria-hidden="true"></canvas>
+    </div>
+    <aside class="pack-inventory" aria-label="本包卡牌">
+      <label>卡包封面<input id="pack-cover" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      <button type="button" id="pack-cover-reset" hidden>恢复默认封面</button>
+      <label class="pack-batch-label">发行口径<select id="pack-batch"><option value="test">测试弹</option><option value="formal">正式弹</option></select></label>
+      <div class="pack-simulation">
+        <label>模拟包数<input id="pack-limit" type="number" min="1" max="100" step="1" value="100" required></label>
+        <button type="button" id="pack-stock-reset">开始新模拟</button>
+      </div>
+      <output id="pack-stock"></output>
+      <h3>本包可抽卡种</h3>
+      <small id="pack-structure"></small>
+      <div id="pack-tier-list" class="pack-tier-list"></div>
+      <h3>已翻开 <output id="pack-count">0 / 5</output></h3>
+      <div id="pack-slots" class="pack-slots"></div>
+    </aside>
+  </div>
+  <p id="pack-hint" role="status">沿封口向右拖动</p>
+  <button type="button" id="pack-shake-horizontal">左右摇</button>
+  <button type="button" id="pack-shake-vertical">上下摇</button>
+  <button type="button" id="pack-back-to-cards" hidden>返回五张卡</button>
+  <button type="button" id="pack-next-card" hidden>下一张</button>
+  <button type="button" id="pack-reveal-all" hidden>一键全翻</button>
+  <button type="button" id="pack-action">撕开卡包</button>
+</dialog>
+<script type="module" src="./studio.js"></script>
+</html>
