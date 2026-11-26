@@ -1,0 +1,326 @@
+{
+  "01-C": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/01-C.png",
+    "master": "高清换图母版/01-C.png"
+  },
+  "02-R": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/02-R.png",
+    "master": "高清换图母版/02-R.png"
+  },
+  "03-SR": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/03-SR.png",
+    "master": "高清换图母版/03-SR.png"
+  },
+  "04-SSR": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/04-SSR.png",
+    "master": "高清换图母版/04-SSR.png"
+  },
+  "05-UR": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/05-UR.png",
+    "master": "高清换图母版/05-UR.png"
+  },
+  "06-AUTO": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/06-AUTO.png",
+    "master": "高清换图母版/06-AUTO.png"
+  },
+  "07-SEC": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": null,
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/07-SEC.png",
+    "master": "高清换图母版/07-SEC.png"
+  },
+  "08-RLC": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": [
+      1218,
+      1452,
+      1840,
+      2194
+    ],
+    "artwork": "高清卡面/08-RLC.png",
+    "master": "高清换图母版/08-RLC.png"
+  },
+  "09-ONE": {
+    "size": [
+      2000,
+      2800
+    ],
+    "aspect": "5:7",
+    "titleBandY": [
+      118,
+      340
+    ],
+    "customAttributeAreaXYXY": [
+      1658,
+      144,
+      1838,
+      308
+    ],
+    "customStarsAreaXYXY": [
+      880,
+      352,
+      1840,
+      436
+    ],
+    "informationPanelY": [
+      2262,
+      2672
+    ],
+    "imageWindowXYXY": [
+      146,
+      476,
+      1840,
+      2194
+    ],
+    "protectedRegionXYXY": null,
+    "artwork": "高清卡面/09-ONE.png",
+    "master": "高清换图母版/09-ONE.png"
+  }
+}
